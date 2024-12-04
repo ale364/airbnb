@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full" >
   <head>
     <title>Airbnb | Holiday rentals, cabins, beach houses and more</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,14 +12,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="h-full">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= render "layouts/header" %>
-
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <% if controller_name != 'registrations' && controller_name != 'sessions' %>
+      <%= render "layouts/header" %>
+    <% end %>
+    <%= yield %>
   </body>
 </html>
